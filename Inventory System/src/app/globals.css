@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern indigo/slate theme — premium SaaS look */
+    --background: 0 0% 99%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    --primary: 234 89% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 71% 4%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 234 89% 96%;
+    --accent-foreground: 234 89% 57%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 234 89% 57%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 71% 4%;
+    --sidebar-primary: 234 89% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 234 89% 96%;
+    --sidebar-accent-foreground: 234 89% 40%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 234 89% 57%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+    --card: 224 47% 8%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 47% 8%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 234 89% 63%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 28% 14%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 28% 14%;
+    --muted-foreground: 218 11% 60%;
+    --accent: 234 40% 18%;
+    --accent-foreground: 234 89% 74%;
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 234 89% 63%;
+    --sidebar-background: 224 47% 6%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 234 89% 63%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 234 40% 14%;
+    --sidebar-accent-foreground: 234 89% 74%;
+    --sidebar-border: 215 28% 14%;
+    --sidebar-ring: 234 89% 63%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
