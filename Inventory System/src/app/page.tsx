@@ -1,10 +1,7 @@
 import { redirect } from "next/navigation";
 
-export default async function Home() {
-  // TODO: Re-enable auth check before production
-  // const supabase = await createClient();
-  // const { data: { user } } = await supabase.auth.getUser();
-  // if (!user) redirect("/login");
+export const dynamic = "force-dynamic";
 
+export default async function Home() {
   redirect("/inventory");
 }
