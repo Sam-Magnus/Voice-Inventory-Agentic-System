@@ -30,26 +30,27 @@ async def get_customer_purchases(
 ) -> list[dict]:
     """Get recent purchase history for a customer."""
     supabase = get_supabase()
-    result = (
-        supabase.table("order_items")
-        .select("quantity, unit_price, discount, products(name), orders(created_at, order_number)")
-        .eq("orders.tenant_id", tenant_id)
-        .eq("orders.customer_id", customer_id)
-        .order("orders.created_at", desc=True)
+
+    # Query orders for this customer, then get items
+    orders_result = (
+        supabase.table("orders")
+        .select("id, order_number, created_at, order_items(quantity, unit_price, product_id, products(name))")
+        .eq("tenant_id", tenant_id)
+        .eq("customer_id", customer_id)
+        .order("created_at", desc=True)
         .limit(limit)
         .execute()
     )
 
     purchases = []
-    for item in result.data or []:
-        purchases.append(
-            {
+    for order in orders_result.data or []:
+        for item in order.get("order_items", []):
+            purchases.append({
                 "product_name": item.get("products", {}).get("name", "Unknown"),
                 "unit_price": item.get("unit_price", 0),
                 "quantity": item.get("quantity", 1),
-                "date": item.get("orders", {}).get("created_at", ""),
-                "order_number": item.get("orders", {}).get("order_number", ""),
-            }
-        )
+                "date": order.get("created_at", ""),
+                "order_number": order.get("order_number", ""),
+            })
 
     return purchases
