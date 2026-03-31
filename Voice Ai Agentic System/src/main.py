@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import structlog
 
 from src.config import get_settings
-from src.api.routes import voice, health, queue
+from src.api.routes import voice, health, queue, chat
 
 structlog.configure(
     processors=[
@@ -34,6 +34,7 @@ app.add_middleware(
 app.include_router(health.router, tags=["health"])
 app.include_router(voice.router, prefix="/api/v1/voice", tags=["voice"])
 app.include_router(queue.router, prefix="/api/v1/voice/queue", tags=["queue"])
+app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
 
 
 @app.on_event("startup")

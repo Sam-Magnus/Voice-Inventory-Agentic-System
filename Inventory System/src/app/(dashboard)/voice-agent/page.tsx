@@ -93,11 +93,19 @@ export default function VoiceAgentPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Voice Agent</h2>
-        <p className="text-muted-foreground">
-          Monitor AI voice agent calls and performance
-        </p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">Voice Agent</h2>
+          <p className="text-muted-foreground">
+            Monitor AI voice agent calls and performance
+          </p>
+        </div>
+        <a
+          href="/voice-agent/chat"
+          className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Try Live Chat
+        </a>
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
