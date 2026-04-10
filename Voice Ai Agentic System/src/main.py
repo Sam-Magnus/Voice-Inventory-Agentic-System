@@ -28,6 +28,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["X-Reply-Text", "X-Tools-Used", "X-Session-Id"],
 )
 
 # Routes
