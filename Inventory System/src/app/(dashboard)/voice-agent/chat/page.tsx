@@ -119,6 +119,11 @@ export default function ChatPage() {
           </p>
         </div>
         <div className="flex gap-2">
+          <a href="/voice-agent/call">
+            <Button variant="outline" size="sm">
+              Voice Call
+            </Button>
+          </a>
           <Button variant="outline" size="sm" onClick={resetChat}>
             Reset Chat
           </Button>

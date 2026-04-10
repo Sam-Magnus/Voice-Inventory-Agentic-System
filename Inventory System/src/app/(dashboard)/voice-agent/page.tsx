@@ -100,12 +100,20 @@ export default function VoiceAgentPage() {
             Monitor AI voice agent calls and performance
           </p>
         </div>
-        <a
-          href="/voice-agent/chat"
-          className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          Try Live Chat
-        </a>
+        <div className="flex gap-2">
+          <a
+            href="/voice-agent/call"
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Try Voice Call
+          </a>
+          <a
+            href="/voice-agent/chat"
+            className="inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+          >
+            Try Live Chat
+          </a>
+        </div>
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
